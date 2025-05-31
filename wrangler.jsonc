@@ -1,0 +1,27 @@
+/**
+ * For more details on how to configure Wrangler, refer to:
+ * https://developers.cloudflare.com/workers/wrangler/configuration/
+ */
+{
+	"$schema": "node_modules/wrangler/config-schema.json",
+	"name": "proto-nova-db",
+	"main": "src/index.ts",
+	"compatibility_date": "2025-03-03",
+    "d1_databases": [
+        {
+          "binding": "DB",
+          "database_name": "proto_nova_db",
+          "database_id": "eeafe0a3-4cea-48fc-aa2f-6dbc3dbfbfc7"
+        }
+    ],
+    "secrets_store_secrets": [
+        {
+            "store_id": "<YOUR-STORE-ID>",
+            "binding": "SECRET",
+            "secret_name": "<YOUR-SECRET-NAME>"
+        }
+    ],
+	"observability": {
+		"enabled": true
+	}
+}
